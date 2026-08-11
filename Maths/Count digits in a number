@@ -1,0 +1,12 @@
+import math
+def countDigits(n):
+    cnt = int(math.log10(n) + 1)
+    return cnt
+
+if __name__ == "__main__":
+    N = 329823568
+    print("N:", N)
+    digits = countDigits(N)
+    print("Number of Digits in N:", digits) 
+
+                                
