@@ -1,0 +1,10 @@
+class Solution:
+    def sumOfNaturalNumbers(self, N):
+        if N == 1:
+            return 1
+        return N + self.sumOfNaturalNumbers(N - 1)
+
+if __name__ == "__main__":
+    obj = Solution()
+    N = 10
+    print(obj.sumOfNaturalNumbers(N)) 

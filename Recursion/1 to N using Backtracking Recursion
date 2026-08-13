@@ -1,0 +1,15 @@
+class Solution:
+    def printNumbers(self, current, n):
+        if current > n:
+            return
+
+        self.printNumbers(current + 1, n)
+
+        print(current, end=' ')
+
+
+if __name__ == "__main__":
+    sol = Solution()
+    n = 10
+    sol.printNumbers(1, n)
+    print()
