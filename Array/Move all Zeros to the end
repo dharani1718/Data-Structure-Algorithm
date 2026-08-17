@@ -1,0 +1,25 @@
+class Solution:
+    def moveZeroes(self, arr):
+        temp = [0] * len(arr)
+        index = 0
+
+        for num in arr:
+            if num != 0:
+                temp[index] = num
+                index += 1
+
+        for i in range(len(arr)):
+            arr[i] = temp[i]
+        return arr
+
+
+def main():
+    arr = [0, 1, 0, 3, 12]
+    sol = Solution()
+    result = sol.moveZeroes(arr)
+    
+    print("Array after moving zeroes:", end=" ")
+    for num in result:
+        print(num, end=" ")
+    print()
+main()

@@ -1,0 +1,22 @@
+def solve(a: list[int]) -> int:
+    max_len = 0
+    sum_index = {}
+    s = 0
+
+    for i, val in enumerate(a):
+        s += val
+        if s == 0:
+            max_len = i + 1
+        elif s in sum_index:
+            max_len = max(max_len, i - sum_index[s])
+        else:
+            sum_index[s] = i
+
+    return max_len
+
+def main():
+    a = [9, -3, 3, -1, 6, -5]
+    print(solve(a))
+
+if __name__ == "__main__":
+    main() 
