@@ -1,0 +1,19 @@
+from itertools import permutations
+
+class Solution:
+    def nextPermutation(self, nums):
+        perms = sorted(set(permutations(nums)))
+        current = tuple(nums)
+
+        for i in range(len(perms)):
+            if perms[i] == current:
+                if i == len(perms) - 1:
+                    return list(perms[0])
+                return list(perms[i + 1])
+
+        return nums
+
+sol = Solution()
+nums = [1, 2, 3]
+result = sol.nextPermutation(nums)
+print(" ".join(map(str, result)))

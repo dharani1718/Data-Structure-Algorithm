@@ -1,0 +1,23 @@
+class ArrayManipulator:
+    def rearrange_by_sign(self, A, n):
+        pos = [] 
+        neg = []  
+        for i in range(n):
+            if A[i] > 0:
+                pos.append(A[i])
+            else:
+                neg.append(A[i])
+
+        for i in range(n // 2):
+            A[2 * i] = pos[i]      
+            A[2 * i + 1] = neg[i]  
+
+        return A
+
+if __name__ == "__main__":
+    A = [1, 2, -4, -5]
+    n = len(A)
+    obj = ArrayManipulator()
+    result = obj.rearrange_by_sign(A, n)
+
+    print(*result) 
